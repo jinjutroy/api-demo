@@ -14,9 +14,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             result = await getDatabyId(id);
             res.status(200).json(result);
             break; 
-        case 'PUT':
-            const {idDel} = req.body;
-            result = await delDataById(idDel);
+        case 'DELETE': 
+            result = await delDataById(id);
             res.status(200).json({result, message: `customer with id: ${id} updated`});
             break;  
         case 'PUT':
