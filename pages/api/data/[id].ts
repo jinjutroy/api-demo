@@ -1,8 +1,15 @@
 import { delDataById, updateListData } from './../../../src/listData';
 import { getDatabyId, setListData } from '../../../src/listData'; 
 import type { NextApiRequest, NextApiResponse } from 'next'
+import NextCors from 'nextjs-cors';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+    await NextCors(req, res, {
+        // Options
+        methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
+        origin: '*',
+        optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+     });
     const id:number = Number(req.query.id);
 
     const method = req.method;
