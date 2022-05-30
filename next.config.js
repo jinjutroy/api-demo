@@ -21,7 +21,7 @@ module.exports = {
       {
         source: "/api/:path*",
         headers: [
-          { key: "Access-Control-Allow-Origin", value: "https://api-demo-jinjutroy.vercel.app" },
+          { key: "Access-Control-Allow-Origin", value: "*" },
         ],
       },
     ]
