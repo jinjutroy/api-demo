@@ -36,10 +36,10 @@ export default async function handler(
       case 'POST':
             const {idReq,message, text,type} = req.body; 
             result = await setListData({ 
-                "id": idReq,
-                "message": message,
-                "text": text,
-                "type": type
+                id: idReq,
+                message: message,
+                text: text,
+                type: type
             });  
             res.status(200).json({result, message: `customer with id: ${idReq} created`});
             break;
